@@ -43,88 +43,88 @@ int main()
 
 char nomi()
 {
-	
-	
+
+
 	char g1[20];
 	char g2[20];
 	char g3[20];
 	char g4[20];
 	char invio[1];
-	
+
 	int conferma;
-	
+
 	do
 	{
 		printf("Quanti giocatori vogliono giocare? (Da 2 minimo ad un massimo di 4)   ");
-		scanf("%d",&g);	
-			
+		scanf("%d",&g);
+
 	}while(g>5 && g<1);
-	
+
 	do{
-	
+
 		if(g==2)
 		{
 			printf("Inserire nome del giocatore 1: ");
 			gets(invio);
 			gets(g1);
-			
-		
+
+
 			printf("Inserire nome del giocatore 2: ");
 			gets(g2);
-			
+
 			printf("Giocatore 1: %s\nGiocatore 2: %s\n",g1,g2);
 		}
-		
+
 		if(g==3)
 		{
 			printf("Inserire nome del giocatore 1: ");
 			gets(invio);
 			gets(g1);
-			
+
 			printf("Inserire nome del giocatore 2: ");
 			gets(g2);
-			
+
 			printf("Inserire nome del giocatore 3: ");
 			gets(g3);
-			
-			printf("Giocatore 1: %s\nGiocatore 2: %s\nGiocatore 3: %s\n",g1,g2,g3);		
+
+			printf("Giocatore 1: %s\nGiocatore 2: %s\nGiocatore 3: %s\n",g1,g2,g3);
 		}
-		
+
 		if(g==4)
 		{
 			printf("Inserire nome del giocatore 1: ");
 			gets(invio);
 			gets(g1);
-			
+
 			printf("Inserire nome del giocatore 2: ");
 			gets(g2);
-			
+
 			printf("Inserire nome del giocatore 3: ");
 			gets(g3);
-			
+
 			printf("Inserire nome del giocatore 4: ");
 			gets(g4);
-			
-			printf("Giocatore 1: %s\nGiocatore 2: %s\nGiocatore 3: %s\nGiocatore 4: %s\n",g1,g2,g3,g4);	
+
+			printf("Giocatore 1: %s\nGiocatore 2: %s\nGiocatore 3: %s\nGiocatore 4: %s\n",g1,g2,g3,g4);
 		}
-		
+
 		printf("I nomi sono corretti?(Inserire 0 se i nomi sono errati)  ");
 		scanf("%d",&conferma);
-		
-		
+
+
 	}while(conferma==0);
-	
-	
+
+
 }
 
 //------FUNZIONE DADI------
 
 int dadi(){
 	srand((unsigned)time(NULL));
-	
+
 	dado1=rand()%6+1;
 	dado2=rand()%6+1;
-	sommadadi=dado1+dado2;	
+	sommadadi=dado1+dado2;
 	if(dado1==dado2)
 		ripdadi=ripdadi+1;
 		printf("%d",sommadadi);
@@ -140,12 +140,12 @@ int movimento()
 		{
 			int esci=0, doppio=0, occ=0, costo=0, cas=0, hot=0, dado=0, carta=0;
 			uscita=0;
-			
+
 			tab1+=d;
-			
+
 			if(tab1>40)
 			tab1-=40;
-			
+
 			if(tab1==1)
 			caselleproprieta();
 			if(tab1==3)
@@ -190,26 +190,26 @@ int movimento()
 			caselleproprieta();
 			if(tab1==39)
 			caselleproprieta();
-		
+
 			if(tab1==2)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
 			if(tab1==17)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
 			if(tab1==33)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
-		
+
 			if(tab1==7)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
 			if(tab1==22)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
 			if(tab1==36)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
-			
+
 			tab2+=d;
-			
+
 			if(tab2>40)
 			tab2-=40;
-			
+
 			if(tab2==1)
 			caselleproprieta();
 			if(tab2==3)
@@ -254,27 +254,27 @@ int movimento()
 			caselleproprieta();
 			if(tab2==39)
 			caselleproprieta();
-		
+
 			if(tab2==2)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
 			if(tab2==17)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
 			if(tab2==33)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
-		
+
 			if(tab2==7)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
 			if(tab2==22)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
 			if(tab2==36)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
-			
-			
+
+
 			tab3+=d;
-			
+
 			if(tab3>40)
 			tab3-=40;
-			
+
 			if(tab3==1)
 			caselleproprieta();
 			if(tab3==3)
@@ -319,27 +319,27 @@ int movimento()
 			caselleproprieta();
 			if(tab3==39)
 			caselleproprieta();
-		
+
 			if(tab3==2)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
 			if(tab3==17)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
 			if(tab3==33)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
-		
+
 			if(tab3==7)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
 			if(tab3==22)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
 			if(tab3==36)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
-	
-			
+
+
 			tab4+=d;
-			
+
 			if(tab4>40)
 			tab4-=40;
-			
+
 			if(tab4==1)
 			caselleproprieta();
 			if(tab4==3)
@@ -384,21 +384,21 @@ int movimento()
 			caselleproprieta();
 			if(tab4==39)
 			caselleproprieta();
-		
+
 			if(tab4==2)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
 			if(tab4==17)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
 			if(tab4==33)
 			stampaprobabilita(g, esci, doppio, cas, hot, carta);
-		
+
 			if(tab4==7)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
 			if(tab4==22)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
 			if(tab4==36)
 			stampaimprevisti(esci, doppio, occ, costo, cas, hot, dado, carta);
-			
+
 		}
 		while(uscita==0);
 }
@@ -424,13 +424,13 @@ int stampaimprevisti(int esci, int doppio, int occ, int costo, int cas, int hot,
 	char a14[130]="Andate avanti fino a parco della vittoria.\n";
 	char a15[130]="Eseguite lavori di manutenzione su tutti i vostri edifici:\npagate M25 per ogni casa e M100 per ogni albergo che possedete.\n";
 	char a16[130]="Andate avanti fino a LARGO COLOMBO.\nSe passate dal 'VIA!' ritirate M200.\n";
-	
+
 	srand((unsigned)time(NULL));
 
 	x=rand()%16;
 	//x=5;
 	//printf("%d", x);
-	
+
 	switch (x)
 	{
 		case 0:
@@ -486,17 +486,17 @@ int stampaimprevisti(int esci, int doppio, int occ, int costo, int cas, int hot,
 			{
 				tab=12; //trasprto giocatore casella 12
 			}
-			if(occ=0) //controllo società vuota
+			if(occ=0) //controllo societï¿½ vuota
 			{
 				printf("La societa' e' vuota, il costo e': 150"); //avviso
 				prendi=150; //prelienvo costo
 				funzionePrendi(prendi); //funzione accredito/debito
 			}
-			if(occ=1) //controllo società comprata
+			if(occ=1) //controllo societï¿½ comprata
 			{
 				printf("La societa' e' gia' in possesso di un altro giocatore.\n"); //avviso
 				//funzione dadi (spinalbelli)
-				prendi=dadi*10; //calcolo somma da prelevare 
+				prendi=dadi*10; //calcolo somma da prelevare
 				printf("Doverai pagare: %d", prendi);	//avviso
 				funzionePrendi(prendi);//funzione accredito/debito
 			}
@@ -504,7 +504,7 @@ int stampaimprevisti(int esci, int doppio, int occ, int costo, int cas, int hot,
 		case 4:
 			printf("%s\n",a5);
 			tab=5; //trasporto casella 5 pedina
-			if(via=1) //se via è 0 non si è passati dal via, se via è 1 si è passati dal via e si prende 200
+			if(via=1) //se via ï¿½ 0 non si ï¿½ passati dal via, se via ï¿½ 1 si ï¿½ passati dal via e si prende 200
 			{
 			dai=200;	//versamento al giocatore
 			funzioneDai(prendi); //funzione accredito/debito
@@ -666,11 +666,11 @@ int stampaprobabilita(int g, int esci, int doppio, int cas, int hot, int carta)
 	char b14[120]="Maturano le cedole delle vostre azioni.\nRicevete M100.\n";
 	char b15[120]="Ricevete la parcella del dottore.\nPagate M50.\n";
 	char b16[120]="La banca riconosce un errore sul vostro estratto conto.\nIncassate M200.\n";
-	
+
 	srand((unsigned)time(NULL));
 
 	x=rand()%16;
-	
+
 	switch (x)
 	{
 		case 0:
@@ -806,7 +806,7 @@ void caselleproprieta()
 	int casproprieta[]={1,3,6,8,9,11,13,14,16,18,19,21,23,24,26,27,29,31,32,34,37,39};
 
 	int y, presenza=0, comprare, prezzo, caselladacomprare=casella;
-	
+
 	if(caselladacomprare<=3)
 		prezzo=60;
 	else if(caselladacomprare<=9)
@@ -837,7 +837,7 @@ void caselleproprieta()
 		{
 			proprieta[y]=giocatore;
 			casa[giocatore]+=1;
-		}		
+		}
 		else
 		{
 			printf("Non hai comprato la casella...");
@@ -848,8 +848,9 @@ void caselleproprieta()
 	else
 	{
 		//pagamento (rata) alla banca con chiamata funzione alla banca di Justin
-		//giocatore che deve pagare è nella variabile "giocatore"
+		//giocatore che deve pagare ï¿½ nella variabile "giocatore"
 		//--(****)--
+		
 	}
 }
 
@@ -889,11 +890,11 @@ void asta()
 			}while(x<prezzoasta);
 			prezzoasta=x;
 			gioc=1;
-		}	
+		}
 		else
 			z++;
-			
-			
+
+
 		printf("PREZZO ATTUALE = %d\n\nGiocatore 2:\nVuoi comprare?\nInserire 0 per uscire, 1 per inserire un prezzo: ",prezzoasta);
 		scanf("%d", &scelta);
 		if(scelta==1)
@@ -906,11 +907,11 @@ void asta()
 			}while(x<prezzoasta);
 			prezzoasta=x;
 			gioc=2;
-		}	
+		}
 		else
 			z++;
-			
-			
+
+
 		printf("PREZZO ATTUALE = %d\n\nGiocatore 3:\nVuoi comprare?\nInserire 0 per uscire, 1 per inserire un prezzo: ",prezzoasta);
 		scanf("%d", &scelta);
 		if(scelta==1)
@@ -923,11 +924,11 @@ void asta()
 			}while(x<prezzoasta);
 			prezzoasta=x;
 			gioc=3;
-		}	
+		}
 		else
 			z++;
-			
-			
+
+
 		printf("PREZZO ATTUALE = %d\n\nGiocatore 4:\nVuoi comprare?\nInserire 0 per uscire, 1 per inserire un prezzo: ",prezzoasta);
 		scanf("%d", &scelta);
 		if(scelta==1)
@@ -940,32 +941,32 @@ void asta()
 			}while(x<prezzoasta);
 			prezzoasta=x;
 			gioc=4;
-		}	
+		}
 		else
 			z++;
-		
+
 	}
-	
+
 	if(z==4)
 	{
-		printf("La casella è stata comprata dal giocatore %d al prezzo di %d",gioc,prezzoasta);
+		printf("La casella ï¿½ stata comprata dal giocatore %d al prezzo di %d",gioc,prezzoasta);
 		y=z;
-		//pagamento alla banca di Justin (al fine di comprare una proprietà destinata all'asta)
+		//pagamento alla banca di Justin (al fine di comprare una proprietï¿½ destinata all'asta)
 		//giocatore che deve pagare sta nella variabile "gioc"; il prezzo da pagare sta nella variabile "prezzoasta";
 		//--(****)--
 	}
-		
+
 }
 
 //------FUNZIONE PROPRIETA' SPECIALI------
 
 void staziones()
 {
-	int flag, scelta;			//indica se la proprietà è libera, acquistata...
-							
-	if(contssud==0)					//la proprietà viene impostata su libera solo la prima volta
+	int flag, scelta;			//indica se la proprietï¿½ ï¿½ libera, acquistata...
+
+	if(contssud==0)					//la proprietï¿½ viene impostata su libera solo la prima volta
 		flag=5;
-	
+
 	printf("STAZIONE SUD: \n");
 	if(flag==5)
 	{
@@ -974,7 +975,7 @@ void staziones()
 			printf("proprieta\' libera\n\ncompra per 200s(0)\n metti all'asta(1)\n");
 			scanf("%d",&scelta);
 		}while(scelta!=1 &&scelta!=0);
-		
+
 		if(scelta==0)
 		{
 				prendi=200;
@@ -986,14 +987,14 @@ void staziones()
 		if(scelta==1)
 		{
 			printf("\nASTA:");
-			
+
 		}
 	}
 	else
 	{
 		if(flag==turno1)
 		{
-			printf("\nla proprietà e\' tua");
+			printf("\nla proprietï¿½ e\' tua");
 		}
 		else
 		{
@@ -1016,7 +1017,7 @@ void staziones()
 					funzionePrendi(prendi);
 					break;
 			}
-			printf("\nla proprietà e\' del giocatore %d che possiede %d stazioni\npaghi %d al giocatore %d",flag, numstazioni[flag], prendi, flag);
+			printf("\nla proprietï¿½ e\' del giocatore %d che possiede %d stazioni\npaghi %d al giocatore %d",flag, numstazioni[flag], prendi, flag);
 		}
 	}
 	contssud++;
@@ -1024,11 +1025,11 @@ void staziones()
 
 void stazionen()
 {
-	int flag, scelta;			//flag: indica se la proprietà è libera, acquistata...
-							
-	if(contsnord==0)					//la proprietà viene impostata su libera solo la prima volta
+	int flag, scelta;			//flag: indica se la proprietï¿½ ï¿½ libera, acquistata...
+
+	if(contsnord==0)					//la proprietï¿½ viene impostata su libera solo la prima volta
 		flag=5;
-	
+
 	printf("STAZIONE NORD: \n");
 	if(flag==5)
 	{
@@ -1037,7 +1038,7 @@ void stazionen()
 			printf("proprieta\' libera\n\ncompra per 200s(0)\n metti all'asta(1)\n");
 			scanf("%d",&scelta);
 		}while(scelta!=1 &&scelta!=0);
-		
+
 		if(scelta==0)
 		{
 				prendi=200;
@@ -1049,14 +1050,14 @@ void stazionen()
 		else
 		{
 			printf("ASTA:");
-			
+
 		}
 	}
 	else
 	{
 		if(flag==turno1)
 		{
-			printf("\nla proprietà e\' tua");
+			printf("\nla proprietï¿½ e\' tua");
 		}
 		else
 		{
@@ -1079,7 +1080,7 @@ void stazionen()
 					funzionePrendi(prendi);
 					break;
 			}
-			printf("\nla proprietà e\' del giocatore %d che possiede %d stazioni\npaghi %d al giocatore %d",flag, numstazioni[flag], prendi, flag);
+			printf("\nla proprietï¿½ e\' del giocatore %d che possiede %d stazioni\npaghi %d al giocatore %d",flag, numstazioni[flag], prendi, flag);
 		}
 	}
 	contsnord++;
@@ -1087,11 +1088,11 @@ void stazionen()
 
 void stazionee()
 {
-	int flag, scelta;			//flag: indica se la proprietà è libera, acquistata...
-							
-	if(contsest==0)					//la proprietà viene impostata su libera solo la prima volta
+	int flag, scelta;			//flag: indica se la proprietï¿½ ï¿½ libera, acquistata...
+
+	if(contsest==0)					//la proprietï¿½ viene impostata su libera solo la prima volta
 		flag=5;
-	
+
 	printf("STAZIONE EST: \n");
 	if(flag==5)
 	{
@@ -1100,7 +1101,7 @@ void stazionee()
 			printf("proprieta\' libera\n\ncompra per 200s(0)\n metti all'asta(1)\n");
 			scanf("%d",&scelta);
 		}while(scelta!=1 &&scelta!=0);
-		
+
 		if(scelta==0)
 		{
 				prendi=200;
@@ -1114,7 +1115,7 @@ void stazionee()
 	{
 		if(flag==turno1)
 		{
-			printf("\nla proprietà e\' tua");
+			printf("\nla proprietï¿½ e\' tua");
 		}
 		else
 		{
@@ -1137,7 +1138,7 @@ void stazionee()
 					funzionePrendi(prendi);
 					break;
 			}
-			printf("\nla proprietà e\' del giocatore %d che possiede %d stazioni\npaghi %d al giocatore %d",flag, numstazioni[flag], prendi, flag);
+			printf("\nla proprietï¿½ e\' del giocatore %d che possiede %d stazioni\npaghi %d al giocatore %d",flag, numstazioni[flag], prendi, flag);
 		}
 	}
 	contsest++;
@@ -1145,11 +1146,11 @@ void stazionee()
 
 void stazioneo()
 {
-	int flag, scelta;			//flag: indica se la proprietà è libera, acquistata...
-							
-	if(contsovest==0)					//la proprietà viene impostata su libera solo la prima volta
+	int flag, scelta;			//flag: indica se la proprietï¿½ ï¿½ libera, acquistata...
+
+	if(contsovest==0)					//la proprietï¿½ viene impostata su libera solo la prima volta
 		flag=5;
-	
+
 	printf("STAZIONE OVEST: \n");
 	if(flag==5)
 	{
@@ -1158,7 +1159,7 @@ void stazioneo()
 			printf("proprieta\' libera\n\ncompra per 200s(0)\n metti all'asta(1)\n");
 			scanf("%d",&scelta);
 		}while(scelta!=1 &&scelta!=0);
-		
+
 		if(scelta==0)
 		{
 				prendi=200;
@@ -1170,14 +1171,14 @@ void stazioneo()
 		else
 		{
 			printf("ASTA:");
-			
+
 		}
 	}
 	else
 	{
 		if(flag==turno1)
 		{
-			printf("\nla proprietà e\' tua");
+			printf("\nla proprietï¿½ e\' tua");
 		}
 		else
 		{
@@ -1200,18 +1201,18 @@ void stazioneo()
 					funzionePrendi(prendi);
 					break;
 			}
-			printf("\nla proprietà e\' del giocatore %d che possiede %d stazioni\npaghi %d al giocatore %d",flag, numstazioni[flag], prendi, flag);
+			printf("\nla proprietï¿½ e\' del giocatore %d che possiede %d stazioni\npaghi %d al giocatore %d",flag, numstazioni[flag], prendi, flag);
 		}
 	}
 	contsovest++;
 }
 
 void societae() {
-		int flag, scelta, risdadi;			//flag: indica se la proprietà è libera, acquistata...
-							
-	if(contselettrica==0)					//la proprietà viene impostata su libera solo la prima volta
+		int flag, scelta, risdadi;			//flag: indica se la proprietï¿½ ï¿½ libera, acquistata...
+
+	if(contselettrica==0)					//la proprietï¿½ viene impostata su libera solo la prima volta
 		flag=5;
-	
+
 	printf("SOCIETA\' ELETTRICA: \n");
 	if(flag==5)
 	{
@@ -1220,7 +1221,7 @@ void societae() {
 			printf("proprieta\' libera\n\ncompra per 200s(0)\n metti all'asta(1)\n");
 			scanf("%d",&scelta);
 		}while(scelta!=1 &&scelta!=0);
-		
+
 		if(scelta==0)
 		{
 				prendi=150;
@@ -1233,14 +1234,14 @@ void societae() {
 		else
 		{
 			printf("ASTA:");
-			
+
 		}
 	}
 	else
 	{
 		if(flag==turno1)
 		{
-			printf("\nla proprietà e\' tua");
+			printf("\nla proprietï¿½ e\' tua");
 		}
 		else
 		{
@@ -1255,23 +1256,23 @@ void societae() {
 					funzionePrendi(prendi);
 					break;
 			}
-			printf("\nla proprietà e\' del giocatore %d che possiede %d societa\'\npaghi al giocatore %d il risultato dei dadi x %d\n",flag, numstazioni[flag], flag, prendi);
+			printf("\nla proprietï¿½ e\' del giocatore %d che possiede %d societa\'\npaghi al giocatore %d il risultato dei dadi x %d\n",flag, numstazioni[flag], flag, prendi);
 			scanf("%d",&risdadi);
 			prendi=prendi*risdadi;
 			funzionePrendi(prendi);
 			printf("\n paghi %d al giocatore %d", prendi, flag);
 		}
-	} 
-	contselettrica++;	
+	}
+	contselettrica++;
 }
 
 void societaa()
 {
-		int flag, scelta, risdadi;			//flag: indica se la proprietà è libera, acquistata...
-							
-	if(contsacqua==0)					//la proprietà viene impostata su libera solo la prima volta
+		int flag, scelta, risdadi;			//flag: indica se la proprietï¿½ ï¿½ libera, acquistata...
+
+	if(contsacqua==0)					//la proprietï¿½ viene impostata su libera solo la prima volta
 		flag=5;
-	
+
 	printf("SOCIETA\' ELETTRICA: \n");
 	if(flag==5)
 	{
@@ -1280,7 +1281,7 @@ void societaa()
 			printf("proprieta\' libera\n\ncompra per 200s(0)\n metti all'asta(1)\n");
 			scanf("%d",&scelta);
 		}while(scelta!=1 &&scelta!=0);
-		
+
 		if(scelta==0)
 		{
 				prendi=150;
@@ -1293,14 +1294,14 @@ void societaa()
 		else
 		{
 			printf("ASTA:");
-			
+
 		}
 	}
 	else
 	{
 		if(flag==turno1)
 		{
-			printf("\nla proprietà e\' tua");
+			printf("\nla proprietï¿½ e\' tua");
 		}
 		else
 		{
@@ -1315,13 +1316,12 @@ void societaa()
 					funzionePrendi(prendi);
 					break;
 			}
-			printf("\nla proprietà e\' del giocatore %d che possiede %d societa\'\npaghi al giocatore %d il risultato dei dadi x %d\n",flag, numstazioni[flag], flag, prendi);
+			printf("\nla proprietï¿½ e\' del giocatore %d che possiede %d societa\'\npaghi al giocatore %d il risultato dei dadi x %d\n",flag, numstazioni[flag], flag, prendi);
 			scanf("%d",&risdadi);
 			prendi=prendi*risdadi;
 			funzionePrendi(prendi);
 			printf("\n paghi %d al giocatore %d", prendi, flag);
 		}
-	} 
-	contselettrica++;	
+	}
+	contselettrica++;
 }
-
