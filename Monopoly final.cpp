@@ -790,12 +790,12 @@ int stampaprobabilita(int g, int esci, int doppio, int cas, int hot, int carta)
 
 //------FUNZIONI DAI E PRENDI------
 int funzioneDai(dai) {
-	contoBancario[] = contoBancario[] + dai;		//funzione di aumento del conto bancario
+	contoBancario[giocatore] = contoBancario[giocatore] + dai;		//funzione di aumento del conto bancario
 	return 0;
 }
 
 int funzionePrendi(prendi) {
-	contoBancario[] = contoBancario[] + prendi;		//funzione di decremento del conto bancario
+	contoBancario[giocatore] = contoBancario[giocatore] + prendi;		//funzione di decremento del conto bancario
 	return 0;
 }
 //------FUNZIONE ACQUISTO------
@@ -850,7 +850,7 @@ void caselleproprieta()
 		//pagamento (rata) alla banca con chiamata funzione alla banca di Justin
 		//giocatore che deve pagare � nella variabile "giocatore"
 		//--(****)--
-		
+		contoBancario[giocatore] = contoBancario[giocatore] - prezzo;
 	}
 }
 
@@ -954,6 +954,7 @@ void asta()
 		//pagamento alla banca di Justin (al fine di comprare una propriet� destinata all'asta)
 		//giocatore che deve pagare sta nella variabile "gioc"; il prezzo da pagare sta nella variabile "prezzoasta";
 		//--(****)--
+		contoBancario[gioc] = contoBancario[gioc] + prezzoasta;
 	}
 
 }
